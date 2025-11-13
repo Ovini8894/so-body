@@ -1,0 +1,522 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Darker Grotesque", sans-serif;
+  background: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  padding-top: 80px; /* Adicionado espaço para navbar fixa */
+}
+
+/* Adicionados estilos da navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #8e753f;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+/* logo canto superior esquerdo */
+.brand-logo img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+/* menu do navbar */
+.navbar-menu {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+/*estilo do menu central navbar */
+.navbar-item {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+
+/* Icons do navbar (lupa, perfil e carrinho) */
+
+.navbar-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Icons do navbar (lupa, perfil e carrinho) cor  */
+.navbar-icon {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-icon:hover {
+  color: #5f5959;
+}
+
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle:hover span {
+  background: #ffffff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 90vh; /* 80% da altura da tela */
+  margin: 0 auto;
+  background: #ffffff;
+}
+
+/* Título principal */
+.title img{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 160px;
+  top: 40px;
+}
+
+/* Subtítulo */
+.subtitle {
+  position: absolute;
+  width: 100%;
+  max-width: 922px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 150px;
+  font-family: "Darker Grotesque", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 68px;
+  text-align: center;
+  color: #c6a35a;
+  padding: 20px;
+}
+
+
+/* Container dos cards */
+
+.cards-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 70px; /* espaço entre os cards */
+  flex-wrap: wrap; /* quebra linha se a tela for menor */
+  top: 260px
+}
+
+/* Imagem do produto */
+.card {
+  width: 200px;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+}
+/* Indicadores de carrossel */
+
+.indicator {
+  width: 16px;
+  height: 14px;
+  background: rgba(217, 217, 217, 0.62);
+  opacity: 0.75;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator:hover {
+  opacity: 1;
+}
+
+.indicator.active {
+  width: 52px;
+  height: 12px;
+  background: #c4c4c4;
+  border-radius: 75px;
+}
+
+/* Botão de compra */
+.cta-button {
+  position: relative;
+  width: 398px;
+  height: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 400px;
+  background: #c6a35a;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(198, 163, 90, 0.3);
+}
+
+.cta-button:hover {
+  background: #8e753f;
+  transform: translateX(-50%) translateY(-2px);
+  box-shadow: 0 6px 20px rgba(198, 163, 90, 0.4);
+}
+
+.cart-icon {
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  background-image: url(/images/carrinhoNOBG.png);
+  background-size: 40px; /* ajusta o tamanho da imagem dentro */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cta-text {
+  font-family: "Darker Grotesque", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 49px;
+  color: #ffffff;
+}
+
+.about-container {
+  position: relative; /* se for necessário */
+  min-height: 80vh;
+  height: auto;
+  margin-top: 100px; /* se quiser afastar dos cards */
+}
+
+.about-title {
+  font-family: "Darker Grotesque", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 68px;
+  color: #c6a35a;
+  margin-bottom: 40px;
+}
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    min-height: 100vh;
+  }
+
+  /* Ajustada navbar para mobile */
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  .logo-top-right {
+    display: none;
+  }
+
+  .logo-top-left {
+    display: block;
+    width: 120px;
+    height: 120px;
+    left: 20px;
+    top: 10px;
+  }
+
+  .logo-main {
+    width: 212px;
+    height: 141px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 220px;
+    border-radius: 52px;
+  }
+
+  .main-title {
+    font-size: 50px;
+    line-height: 55px;
+    top: 300px;
+    width: 90%;
+  }
+
+  .subtitle {
+    font-size: 28px;
+    line-height: 38px;
+    top: 150px;
+    max-width: 90%;
+  }
+
+  .product-image {
+    top: 520px;
+    height: 350px;
+    max-width: 90%;
+  }
+
+  .cta-button {
+    width: 90%;
+    max-width: 350px;
+    bottom: 40px;
+  }
+
+  .cta-text {
+    font-size: 28px;
+  }
+
+  .cart-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cart-icon::before {
+    font-size: 28px;
+  }
+
+  .about-container{
+    min-height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .subtitle {
+    font-size: 50px;
+    line-height: 40px;
+    top: 200px;
+  }
+
+  .cta-button {
+    height: 70px;
+  }
+
+  .cta-text {
+    font-size: 24px;
+  }
+}
+
+/* Adicionando estilos para a seção "Sobre a loja" */
+/* Simplificado layout da seção Sobre sem imagem */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 150px;
+  max-width: 1500px;
+  min-height: 90vh;
+  margin: 0 auto;
+  padding: 80px 100px;
+}
+
+.about-title {
+  font-family: "TT Ramilas", serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: #c6a35a;
+  margin-bottom: 40px;
+  text-align: left;
+}
+.about-image img {
+  width: 420px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
+  text-align: left;
+  font-family: "TT Interphases", sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #8e753f;
+}
+
+.about-text p {
+  font-family: "TT Interphases", sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #8e753f;
+  text-align: left;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .about-section {
+    flex-direction: column; /* imagem em cima, texto embaixo */
+    text-align: center;
+    padding: 60px 40px;
+  }
+
+  .about-image img {
+    width: 80%;
+  }
+
+  .about-text {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .about-title {
+    text-align: center;
+  }
+}
+
+/* ---------------------------- AREA DE CONTATO ------------------------------------- */
+
+.contact-section {
+  background: #fff;
+  color: #c6a35a;
+  padding: 80px 0;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  min-height: 90vh;
+}
+
+.contact-content {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-title {
+  font-family: "TT Ramillas", serif;
+  font-size: 64px;
+  font-weight: 400;
+  color: #c6a35a;
+  line-height: 1.2;
+}
+
+.contact-item h3 {
+  font-family: "TT Interphases", sans-serif;
+  font-size: 18px;
+  color: #c6a35a;
+  margin-bottom: 4px;
+}
+
+.contact-item p {
+  font-family: "TT Interphases", sans-serif;
+  font-size: 18px;
+  color: #c6a35a;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-icons img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) saturate(100%) invert(52%) sepia(31%) saturate(563%) hue-rotate(10deg);
+  transition: transform 0.2s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.1);
+}
+
+.contact-info {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 60px 24px;
+  }
+
+  .contact-title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .contact-content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 32px;
+  }
+
+  .contact-item h3,
+  .contact-item p {
+    font-size: 14px;
+  }
+
+  .contact-icons img {
+    width: 28px;
+    height: 28px;
+  }
+}
