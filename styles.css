@@ -1,3 +1,7 @@
+html, body {
+  overflow-x: hidden;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -426,97 +430,64 @@ body {
 /* ---------------------------- AREA DE CONTATO ------------------------------------- */
 
 .contact-section {
-  background: #fff;
-  color: #c6a35a;
-  padding: 80px 0;
-  text-align: left;
-  display: flex;
-  justify-content: center;
-  min-height: 90vh;
+  min-height: 92vh; /* altura total da seção */
+  width: 100%;
+  padding: 60px 0;
 }
 
-.contact-content {
-  max-width: 500px;
+/* Aqui faz as duas colunas ficarem alinhadas no eixo Y */
+.contact-container {
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  gap: 60px;
+  padding: 0 20px;
+  align-items: center; /* eixo Y */
 }
 
 .contact-title {
-  font-family: "TT Ramillas", serif;
+  width: 100%;
+  text-align: center;
+  color: #8e753f;
+  font-family: "TT Ramilas", serif;
   font-size: 64px;
   font-weight: 400;
-  color: #c6a35a;
-  line-height: 1.2;
-}
-
-.contact-item h3 {
-  font-family: "TT Interphases", sans-serif;
-  font-size: 18px;
-  color: #c6a35a;
-  margin-bottom: 4px;
-}
-
-.contact-item p {
-  font-family: "TT Interphases", sans-serif;
-  font-size: 18px;
-  color: #c6a35a;
-}
-
-.contact-icons {
-  display: flex;
-  gap: 24px;
-}
-
-.contact-icons img {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) saturate(100%) invert(52%) sepia(31%) saturate(563%) hue-rotate(10deg);
-  transition: transform 0.2s ease;
-}
-
-.contact-icons img:hover {
-  transform: scale(1.1);
+  margin-bottom: 100px;
 }
 
 .contact-info {
-  position: relative;
+  flex: 1;
+}
+
+.contact-form {
+  flex: 1;
+}
+
+.contact-form form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
-@media (max-width: 768px) {
-  .contact-section {
-    padding: 60px 24px;
-  }
-
-  .contact-title {
-    font-size: 40px;
-    text-align: center;
-  }
-
-  .contact-content {
-    align-items: center;
-    text-align: center;
-  }
-
-  .contact-icons {
-    justify-content: center;
-  }
+.contact-info,
+.contact-form {
+  flex: 1.3;      /* aumenta a largura real */
+  min-height: 400px;
+  padding: 40px;
 }
 
-@media (max-width: 480px) {
-  .contact-title {
-    font-size: 32px;
-  }
+.contact-item {
+    font-family: "TT Interphases", sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #8e753f;
+}
 
-  .contact-item h3,
-  .contact-item p {
-    font-size: 14px;
-  }
-
-  .contact-icons img {
-    width: 28px;
-    height: 28px;
-  }
+.contact-form {
+    font-family: "TT Interphases", sans-serif;
+  font-size: 24px;
+  line-height: 1.6;
+  color: #8e753f;
 }
