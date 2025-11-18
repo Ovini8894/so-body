@@ -7,191 +7,381 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- Adicionada navbar completa no topo -->
+<body class="home">
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-brand">
-      <span class="brand-logo"> <img src="images/whitesobody-removebg-preview.png" alt=""></span>
+      <span class="brand-logo">
+        <img src="images/whitesobody-removebg-preview.png" alt="Logo SÓ BODY">
+      </span>
     </div>
     
     <div class="navbar-menu">
-      <a href="#" class="navbar-item">INÍCIO</a>
-      <a href="#" class="navbar-item">PRODUTOS</a>
-      <a href="#" class="navbar-item">SOBRE</a>
-      <a href="#" class="navbar-item">CONTATO</a>
+      <a href="index.html" class="navbar-item">INÍCIO</a>
+      <a href="catalog.html" class="navbar-item">PRODUTOS</a>
+      <a href="#sobre" class="navbar-item">SOBRE</a>
+      <a href="#contato" class="navbar-item">CONTATO</a>
     </div>
     
     <div class="navbar-icons">
-      <a href="#" class="navbar-icon">
+      <a href="#" class="navbar-icon search-toggle" aria-label="Buscar">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="11" cy="11" r="8"></circle>
           <path d="m21 21-4.35-4.35"></path>
         </svg>
       </a>
-      <a href="#" class="navbar-icon">
+      <a href="login.html" class="navbar-icon" aria-label="Minha conta">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
           <circle cx="12" cy="7" r="4"></circle>
         </svg>
       </a>
-      <a href="#" class="navbar-icon">
+      <a href="cart.html" class="navbar-icon cart-icon-wrapper" aria-label="Carrinho">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <circle cx="9" cy="21" r="1"></circle>
           <circle cx="20" cy="21" r="1"></circle>
           <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
         </svg>
+        <span class="cart-badge">0</span>
       </a>
     </div>
     
-    <button class="navbar-toggle">
+    <button class="navbar-toggle" aria-label="Menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
-  <div class="container">
-    <!-- Menu hambúrguer -->
-    <div class="menu-icon">
-      <div class="menu-line"></div>
-      <div class="menu-line"></div>
-      <div class="menu-line"></div>
-    </div>
-    
-
-    
-    <!-- Título principal -->
-    <div class="title"><img src="images/goldensobody-removebg-preview.png" alt="Logo principal do site"></div>
-    
-    <!-- Subtítulo -->
-    <p class="subtitle">ONDE A MODA ENCONTRA A ATITUDE</p>
-    
-    <!-- Imagem do produto -->
-    <div class="cards-container">
-      <div class="card"><img src="images/sacolanoBG.png"></div>
-      <div class="card"><img src="images/bodynoBG.png"></div>
-      <div class="card"><img src="images/pursenoBG.png"></div>
-      <div class="card"><img src="images/cabidenoBG.png"></div>
-    </div>
-
-    
-    <!-- Indicadores de carrossel -->
-    <div class="carousel-indicators">
-      <span class="indicator"></span>
-      <span class="indicator"></span>
-      <span class="indicator active"></span>
-    </div>
-    
-    <!-- Botão de compra -->
-    <button class="cta-button">
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="hero-content">
+      <!-- Título principal -->
+      <div class="title">
+        <img src="images/goldensobody-removebg-preview.png" alt="Logo principal do site">
+      </div>
+      
+      <!-- Subtítulo -->
+      <p class="subtitle">ONDE A MODA ENCONTRA A ATITUDE</p>
+      
+      <!-- Carrossel de produtos modernizado sem indicadores -->
+      <div class="products-carousel">
+        <div class="carousel-track">
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/sacolanoBG.png" alt="Sacola">
+              <div class="card-label">Bolsas</div>
+            </div>
+          </div>
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/bodynoBG.png" alt="Body">
+              <div class="card-label">Bodies</div>
+            </div>
+          </div>
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/pursenoBG.png" alt="Bolsa">
+              <div class="card-label">Acessórios</div>
+            </div>
+          </div>
+          <div class="product-slide">
+            <div class="product-card">
+              <div class="card-shine"></div>
+              <img src="images/cabidenoBG.png" alt="Cabide">
+              <div class="card-label">Coleções</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Botão de compra -->
+      <a href="catalog.html" class="cta-button">
         <div class="cart-icon"></div>
-      <span class="cta-text">COMPRE AGORA</span>
-    </button>
+        <span class="cta-text">COMPRE AGORA</span>
+      </a>
+    </div>
   </div>
 
-
-    <!-- Sobre a Loja -->
-  <section class="about-section">
-    <div class="about-image">
-      <h2 class="about-title">Sobre a loja</h2>
-      <img src="/images/aboutImage.jpg" alt="">
-    </div>
-    <div class="about-text">
-      <p>Nossa loja nasceu da vontade de oferecer peças que valorizam o estilo e a confiança de cada mulher. Trabalhamos com bodies e bolsas como destaque, mas nosso catálogo vai muito além tendo também blusinhas, vestidos e outros acessórios que completam qualquer look com personalidade.</p>
-      <p>Acreditamos que se vestir bem não é questão de tendência, e sim de atitude. Por isso, cada peça é escolhida com cuidado, unindo o conforto e a qualidade que toda mulher deseja nas seu guarda roupa.</p>
+  <!-- Seção Sobre -->
+  <section id="sobre" class="about-section">
+    <div class="about-container">
+      <div class="about-image-wrapper">
+        <div class="about-image-decoration"></div>
+        <img src="/images/aboutImage.jpg" alt="Sobre a loja SÓ BODY" class="about-image">
+        <div class="about-badge">
+          <i class="fas fa-crown"></i>
+          <span>Estilo & Atitude</span>
+        </div>
+      </div>
+      
+      <div class="about-content">
+        <div class="about-header">
+          <span class="about-subtitle">CONHEÇA-NOS</span>
+          <h2 class="about-title">Sobre a SÓ BODY</h2>
+          <div class="about-divider"></div>
+        </div>
+        
+        <div class="about-text">
+          <p class="about-paragraph highlight">Nossa loja nasceu da vontade de oferecer peças que valorizam o estilo e a confiança de cada mulher.</p>
+          
+          <p class="about-paragraph">Trabalhamos com <strong>bodies e bolsas</strong> como destaque, mas nosso catálogo vai muito além tendo também blusinhas, vestidos e outros acessórios que completam qualquer look com personalidade.</p>
+          
+          <p class="about-paragraph">Acreditamos que se vestir bem não é questão de tendência, e sim de <strong>atitude</strong>. Por isso, cada peça é escolhida com cuidado, unindo o conforto e a qualidade que toda mulher deseja no seu guarda-roupa.</p>
+        </div>
+        
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-gem"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Qualidade Premium</h4>
+              <p>Peças selecionadas com cuidado</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Estilo Único</h4>
+              <p>Para mulheres autênticas</p>
+            </div>
+          </div>
+          
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Atendimento Especial</h4>
+              <p>Sempre prontas para você</p>
+            </div>
+          </div>
+        </div>
+        
+        <button class="about-cta">
+          <a href="catalog.html" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 8px; width: 100%;">
+            <span>CONHEÇA NOSSA COLEÇÃO</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </button>
+      </div>
     </div>
   </section>
 
-  <!-- Sobre a Loja -->
-   <section class="contact-section">
-     <div class="contact-title">
-       <h3>Redes de Contato</h3>
-     </div>
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="contact-item">
-            <h3>Instagram</h3>
-            <p>@bora.de.body</p>
-          </div>
-
-          <div class="contact-item">
-            <h3>Número</h3>
-            <p>(00) 0000-0000</p>
-          </div>
-
-          <div class="contact-item">
-            <h3>Email</h3>
-            <p>nhenhe@gmail.com</p>
-          </div>
-
-          <!-- Ícones -->
-          <div class="contact-icons">
-            <!-- Instagram Icon-->
-            <a href="https://instagram.com/seuusuario" target="_blank" class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 24 24" 
-                  width="38" height="38" 
-                  fill="#b8934c">
-                <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm10 2c1.654 0 3 1.346 3 3v10c0 1.654-1.346 3-3 3H7c-1.654 0-3-1.346-3-3V7c0-1.654 1.346-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm4.5-3a1.5 1.5 0 11-.001 3.001A1.5 1.5 0 0116.5 6z"/>
-              </svg>
-            </a>
-
-            <!--Zap Icon-->
-            <a href="https://wa.me/5511999998888" target="_blank" class="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-              width="38" height="38" 
-              fill="#b8934c">
-             <path d="M20.52 3.48A11.94 11.94 0 0 0 12 .5 11.98 11.98 0 0 0 .5 12c0 2.07.54 4.02 1.56 5.77L.5 23.5l5.06-1.32A11.94 11.94 0 0 0 12 23.5c6.62 0 11.98-5.36 11.98-11.98 0-3.2-1.25-6.2-3.46-8.04zM12 21.5c-1.9 0-3.74-.5-5.33-1.44l-.38-.22-3.01.79.8-2.93-.24-.39A9.5 9.5 0 1 1 12 21.5zm5.5-7.3c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.78.97-.96 1.17-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.12.3-.33.45-.5.15-.17.2-.29.3-.48.1-.2 0-.37-.02-.52-.02-.15-.67-1.62-.92-2.22-.24-.59-.49-.51-.67-.52-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.8.37-.28.3-1.05 1.03-1.05 2.51s1.08 2.91 1.23 3.11c.15.2 2.13 3.34 5.16 4.68 3.03 1.34 3.03.9 3.57.85.54-.05 1.76-.72 2.01-1.42.25-.7.25-1.3.18-1.42-.07-.12-.27-.2-.57-.35z"/>
-             </svg>
-            </a>
-
-            <!-- Email Icon-->
-            <a href="mailto:seuemail@gmail.com" target="_blank" class="icon">
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                  viewBox="0 0 24 24" 
-                  width="38" height="38" 
-                  fill="#b8934c">
-                <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5L4 8V6l8 5 8-5v2z"/>
-              </svg>
-            </a>
-          </div>
+  <!-- Seção de Contato -->
+  <section id="contato" class="contact">
+    <div class="contact-container">
+      <div class="section-header">
+        <h2 class="section-title">Entre em Contato</h2>
+        <p class="section-subtitle">Escolha a melhor forma de falar conosco</p>
       </div>
 
-      <div class="contact-form">
-      <h2>Fale Conosco</h2>
-      <form>
-        <input type="text" placeholder="Seu nome">
-        <input type="email" placeholder="Seu email">
-        <textarea placeholder="Mensagem"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+      <!-- Botões de contato direto (Instagram, WhatsApp, Telefone) -->
+      <div class="contact-buttons">
+        <a href="https://www.instagram.com/sobody_oficial/" target="_blank" class="contact-btn contact-btn-instagram">
+          <div class="btn-icon">
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="btn-content">
+            <span class="btn-label">Instagram</span>
+            <span class="btn-text">@bora.de.body</span>
+          </div>
+        </a>
+
+        <a href="https://wa.me/5534996848050" target="_blank" class="contact-btn contact-btn-whatsapp">
+          <div class="btn-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="btn-content">
+            <span class="btn-label">WhatsApp</span>
+            <span class="btn-text">Fale conosco</span>
+          </div>
+        </a>
+
+        <a href="tel:+5534996848050" class="contact-btn contact-btn-phone">
+          <div class="btn-icon">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="btn-content">
+            <span class="btn-label">Telefone</span>
+            <span class="btn-text">(34) 99684-8050</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Formulário de contato para problemas/suporte via email -->
+      <div class="form-section">
+        <div class="form-header">
+          <h3>Teve algum problema?</h3>
+          <p>Envie sua mensagem e responderemos por email o mais breve possível</p>
+        </div>
+        
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="name" name="name" required placeholder=" ">
+              <label for="name">Seu nome</label>
+            </div>
+            
+            <div class="form-group">
+              <input type="email" id="email" name="email" required placeholder=" ">
+              <label for="email">Seu email</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" required placeholder=" ">
+            <label for="subject">Assunto</label>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+            <label for="message">Descreva seu problema ou dúvida</label>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>Enviar Mensagem</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
     </div>
-  
-    <script>
+  </section>
+
+  <!-- Barra de busca expansível -->
+  <div class="search-bar">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Buscar produtos...">
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="search-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="images/goldensobody-removebg-preview.png" alt="SÓ BODY Logo">
+          </div>
+          <p class="footer-description">Onde a moda encontra a atitude. Estilo único para mulheres autênticas.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/sobody_oficial/" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5534996848050" target="_blank" class="social-link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/sobody" target="_blank" class="social-link">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Comprar</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html?category=bodies">Bodies</a></li>
+            <li><a href="catalog.html?category=bolsas">Bolsas</a></li>
+            <li><a href="catalog.html?category=vestidos">Vestidos</a></li>
+            <li><a href="catalog.html?category=acessorios">Acessórios</a></li>
+            <li><a href="catalog.html">Todos os Produtos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Institucional</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#sobre">Sobre Nós</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+            <li><a href="terms.html">Termos de Uso</a></li>
+            <li><a href="privacy.html">Política de Privacidade</a></li>
+            <li><a href="faq.html">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Atendimento</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+5534996848050"><i class="fas fa-phone"></i> (34) 99684-8050</a></li>
+            <li><a href="mailto:contato@sobody.com.br"><i class="fas fa-envelope"></i> contato@sobody.com.br</a></li>
+            <li><a href="#"><i class="fas fa-clock"></i> Seg-Sex: 9h-18h</a></li>
+          </ul>
+          <div class="payment-methods">
+            <img src="/placeholder.svg?height=30&width=50&text=Visa" alt="Visa">
+            <img src="/placeholder.svg?height=30&width=50&text=Master" alt="Mastercard">
+            <img src="/placeholder.svg?height=30&width=50&text=Pix" alt="PIX">
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 SÓ BODY. Todos os direitos reservados.</p>
+        <p class="footer-credit">Desenvolvido com <i class="fas fa-heart"></i> para mulheres autênticas</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="global.js"></script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-      if (window.innerWidth <= 470) {
-        const cards = document.querySelectorAll('.card');
-        let index = 0;
-
-        // garante que a primeira apareça
-        cards[0].classList.add('active');
-
-        setInterval(() => {
-          cards[index].classList.remove('active');
-          index = (index + 1) % cards.length;
-          cards[index].classList.add('active');
-        }, 3000);
+      const track = document.querySelector('.carousel-track');
+      const slides = document.querySelectorAll('.product-slide');
+      let currentIndex = 0;
+      
+      function updateCarousel() {
+        if (window.innerWidth <= 768) {
+          // Mobile: mostra um slide por vez
+          const slideWidth = 100;
+          track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+        } else {
+          // Desktop: mostra todos os slides com scroll suave
+          const slideWidth = slides[0].offsetWidth + 70; // largura + gap
+          track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        }
       }
-    });
-    </script>
+      
+      function nextSlide() {
+        const maxIndex = window.innerWidth <= 768 ? slides.length - 1 : slides.length - 4;
+        currentIndex = (currentIndex + 1) > maxIndex ? 0 : currentIndex + 1;
+        updateCarousel();
+      }
+      
+      // Auto-play no mobile
+      if (window.innerWidth <= 768) {
+        setInterval(nextSlide, 3000);
+      }
+      
+      // Atualiza no resize
+      window.addEventListener('resize', updateCarousel);
+      updateCarousel();
 
-   </section>
+      // Inicializar contador do carrinho
+      updateCartBadge();
+    });
+
+    function updateCartBadge() {
+      const cartBadge = document.querySelector('.cart-badge');
+      // Lógica para atualizar o contador do carrinho
+      cartBadge.textContent = '0'; // Exemplo de atualização
+    }
+  </script>
 </body>
 </html>

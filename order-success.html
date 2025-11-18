@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Concluído - SÓ BODY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="order-success">
+  <!-- Success Page -->
+  <div class="success-page">
+    <div class="success-container">
+      <div class="success-animation">
+        <div class="check-circle">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+
+      <h1 class="success-title">Pedido Realizado com Sucesso!</h1>
+      <p class="success-subtitle">Obrigada por comprar na SÓ BODY</p>
+
+      <div class="order-details">
+        <div class="order-number">
+          <span class="label">Número do Pedido</span>
+          <span class="value">#SB-2025-001234</span>
+        </div>
+
+        <div class="order-info-grid">
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="info-label">Email de Confirmação</span>
+              <span class="info-value">Enviado para seu email</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-calendar"></i>
+            <div>
+              <span class="info-label">Previsão de Entrega</span>
+              <span class="info-value">5-7 dias úteis</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-box"></i>
+            <div>
+              <span class="info-label">Status do Pedido</span>
+              <span class="info-value">Em Processamento</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-credit-card"></i>
+            <div>
+              <span class="info-label">Forma de Pagamento</span>
+              <span class="info-value">Cartão de Crédito</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="order-summary-box">
+        <h3>Resumo da Compra</h3>
+        <div class="summary-items">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span>R$ 429,60</span>
+          </div>
+          <div class="summary-row">
+            <span>Frete</span>
+            <span>R$ 15,00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Total Pago</span>
+            <span>R$ 444,60</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-actions">
+        <a href="index.html" class="action-btn primary">
+          <i class="fas fa-home"></i>
+          Voltar para Início
+        </a>
+        <a href="catalog.html" class="action-btn secondary">
+          <i class="fas fa-shopping-bag"></i>
+          Continuar Comprando
+        </a>
+      </div>
+
+      <div class="next-steps">
+        <h4>Próximos Passos</h4>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-icon">1</div>
+            <div class="step-text">
+              <strong>Confirmação do Pagamento</strong>
+              <p>Aguarde a confirmação do pagamento</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-icon">2</div>
+            <div class="step-text">
+              <strong>Separação do Pedido</strong>
+              <p>Seu pedido será separado e embalado</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-icon">3</div>
+            <div class="step-text">
+              <strong>Envio</strong>
+              <p>Você receberá o código de rastreamento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="support-message">
+        <i class="fas fa-headset"></i>
+        <div>
+          <strong>Precisa de ajuda?</strong>
+          <p>Entre em contato pelo WhatsApp: <a href="https://wa.me/5534996848050">(34) 99684-8050</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Animate check icon on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.check-circle').classList.add('show');
+      }, 300);
+    });
+  </script>
+</body>
+</html>

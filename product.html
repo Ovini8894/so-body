@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produto - SÓ BODY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <span class="brand-logo">
+        <img src="images/whitesobody-removebg-preview.png" alt="Logo SÓ BODY">
+      </span>
+    </div>
+    
+    <div class="navbar-menu">
+      <a href="index.html" class="navbar-item">INÍCIO</a>
+      <a href="catalog.html" class="navbar-item">PRODUTOS</a>
+      <a href="index.html#sobre" class="navbar-item">SOBRE</a>
+      <a href="index.html#contato" class="navbar-item">CONTATO</a>
+    </div>
+    
+    <div class="navbar-icons">
+      <a href="#" class="navbar-icon search-toggle" aria-label="Buscar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.35-4.35"></path>
+        </svg>
+      </a>
+      <a href="login.html" class="navbar-icon" aria-label="Minha conta">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+      </a>
+      <a href="cart.html" class="navbar-icon cart-icon-wrapper" aria-label="Carrinho">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge">0</span>
+      </a>
+    </div>
+    
+    <button class="navbar-toggle" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Buscar produtos...">
+      <button class="search-btn">
+        <i class="fas fa-search"></i>
+      </button>
+      <button class="search-close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <a href="index.html">Início</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="catalog.html">Produtos</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="catalog.html?category=bodies">Bodies</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Body Preto Básico</span>
+    </div>
+  </div>
+
+  <!-- Product Detail -->
+  <section class="product-detail">
+    <div class="product-container">
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img src="/placeholder.svg?height=600&width=600" alt="Body Preto Básico" id="main-image">
+          <button class="wishlist-btn" id="wishlist-toggle">
+            <i class="far fa-heart"></i>
+          </button>
+          <div class="product-badge-detail new">Novo</div>
+        </div>
+        <div class="gallery-thumbs">
+          <img src="/placeholder.svg?height=100&width=100" alt="Imagem 1" class="thumb active" data-image="/placeholder.svg?height=600&width=600">
+          <img src="/placeholder.svg?height=100&width=100" alt="Imagem 2" class="thumb" data-image="/placeholder.svg?height=600&width=600">
+          <img src="/placeholder.svg?height=100&width=100" alt="Imagem 3" class="thumb" data-image="/placeholder.svg?height=600&width=600">
+          <img src="/placeholder.svg?height=100&width=100" alt="Imagem 4" class="thumb" data-image="/placeholder.svg?height=600&width=600">
+        </div>
+      </div>
+
+      <div class="product-info-detail">
+        <span class="product-category-badge">Bodies</span>
+        <h1 class="product-title-detail">Body Preto Básico</h1>
+        
+        <div class="product-rating-detail">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span class="rating-count">(25 avaliações)</span>
+        </div>
+
+        <div class="product-price-detail">
+          <span class="price-main">R$ 89,90</span>
+          <span class="price-installment">ou 3x de R$ 29,97 sem juros</span>
+        </div>
+
+        <div class="product-description">
+          <p>Body básico preto confeccionado em malha canelada de alta qualidade. Design versátil e confortável, perfeito para compor diversos looks do dia a dia ou para ocasiões especiais.</p>
+        </div>
+
+        <div class="product-options">
+          <div class="option-group">
+            <label class="option-label">Tamanho</label>
+            <div class="size-buttons">
+              <button class="size-btn" data-size="PP">PP</button>
+              <button class="size-btn active" data-size="P">P</button>
+              <button class="size-btn" data-size="M">M</button>
+              <button class="size-btn" data-size="G">G</button>
+              <button class="size-btn" data-size="GG">GG</button>
+            </div>
+            <a href="#" class="size-guide-link">
+              <i class="fas fa-ruler"></i>
+              Guia de tamanhos
+            </a>
+          </div>
+
+          <div class="option-group">
+            <label class="option-label">Quantidade</label>
+            <div class="quantity-selector">
+              <button class="qty-btn" id="qty-minus">-</button>
+              <input type="number" class="qty-input" value="1" min="1" max="10" id="qty-value">
+              <button class="qty-btn" id="qty-plus">+</button>
+            </div>
+            <span class="stock-info">
+              <i class="fas fa-check"></i>
+              Em estoque (15 unidades)
+            </span>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn-add-cart" id="add-to-cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Adicionar ao Carrinho</span>
+          </button>
+          <button class="btn-buy-now" id="buy-now">
+            <i class="fas fa-bolt"></i>
+            <span>Comprar Agora</span>
+          </button>
+        </div>
+
+        <div class="product-features">
+          <div class="feature-item-detail">
+            <i class="fas fa-truck"></i>
+            <div>
+              <strong>Frete Grátis</strong>
+              <p>Para compras acima de R$ 199</p>
+            </div>
+          </div>
+          <div class="feature-item-detail">
+            <i class="fas fa-exchange-alt"></i>
+            <div>
+              <strong>Troca Grátis</strong>
+              <p>Até 30 dias após a compra</p>
+            </div>
+          </div>
+          <div class="feature-item-detail">
+            <i class="fas fa-shield-alt"></i>
+            <div>
+              <strong>Compra Segura</strong>
+              <p>Ambiente 100% protegido</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-details-tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn active" data-tab="details">Detalhes</button>
+            <button class="tab-btn" data-tab="care">Cuidados</button>
+            <button class="tab-btn" data-tab="shipping">Entrega</button>
+          </div>
+          
+          <div class="tab-content active" id="details-tab">
+            <ul class="detail-list">
+              <li><strong>Material:</strong> 95% Algodão, 5% Elastano</li>
+              <li><strong>Cor:</strong> Preto</li>
+              <li><strong>Modelagem:</strong> Ajustada ao corpo</li>
+              <li><strong>Decote:</strong> Redondo</li>
+              <li><strong>Manga:</strong> Sem manga</li>
+              <li><strong>Fechamento:</strong> Colchetes na parte inferior</li>
+            </ul>
+          </div>
+          
+          <div class="tab-content" id="care-tab">
+            <ul class="detail-list">
+              <li>Lavar à máquina em água fria</li>
+              <li>Não usar alvejante</li>
+              <li>Secar à sombra</li>
+              <li>Passar em temperatura baixa</li>
+              <li>Não lavar a seco</li>
+            </ul>
+          </div>
+          
+          <div class="tab-content" id="shipping-tab">
+            <ul class="detail-list">
+              <li>Prazo de entrega: 5 a 10 dias úteis</li>
+              <li>Frete calculado no checkout</li>
+              <li>Frete grátis para compras acima de R$ 199</li>
+              <li>Rastreamento disponível</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <div class="container">
+      <h2 class="section-title">Produtos Relacionados</h2>
+      <div class="products-grid-related">
+        <!-- Products will be loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <div class="footer-logo">
+            <img src="images/goldensobody-removebg-preview.png" alt="SÓ BODY Logo">
+          </div>
+          <p class="footer-description">Onde a moda encontra a atitude. Estilo único para mulheres autênticas.</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/sobody_oficial/" target="_blank" class="social-link">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5534996848050" target="_blank" class="social-link">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/sobody" target="_blank" class="social-link">
+              <i class="fab fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Comprar</h4>
+          <ul class="footer-links">
+            <li><a href="catalog.html?category=bodies">Bodies</a></li>
+            <li><a href="catalog.html?category=bolsas">Bolsas</a></li>
+            <li><a href="catalog.html?category=vestidos">Vestidos</a></li>
+            <li><a href="catalog.html?category=acessorios">Acessórios</a></li>
+            <li><a href="catalog.html">Todos os Produtos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Institucional</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#sobre">Sobre Nós</a></li>
+            <li><a href="index.html#contato">Contato</a></li>
+            <li><a href="terms.html">Termos de Uso</a></li>
+            <li><a href="privacy.html">Política de Privacidade</a></li>
+            <li><a href="faq.html">Perguntas Frequentes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-title">Atendimento</h4>
+          <ul class="footer-links">
+            <li><a href="tel:+5534996848050"><i class="fas fa-phone"></i> (34) 99684-8050</a></li>
+            <li><a href="mailto:contato@sobody.com.br"><i class="fas fa-envelope"></i> contato@sobody.com.br</a></li>
+            <li><a href="#"><i class="fas fa-clock"></i> Seg-Sex: 9h-18h</a></li>
+          </ul>
+          <div class="payment-methods">
+            <img src="/placeholder.svg?height=30&width=50&text=Visa" alt="Visa">
+            <img src="/placeholder.svg?height=30&width=50&text=Master" alt="Mastercard">
+            <img src="/placeholder.svg?height=30&width=50&text=Pix" alt="PIX">
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 SÓ BODY. Todos os direitos reservados.</p>
+        <p class="footer-credit">Desenvolvido com <i class="fas fa-heart"></i> para mulheres autênticas</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="global.js"></script>
+  <script src="product.js"></script>
+</body>
+</html>
