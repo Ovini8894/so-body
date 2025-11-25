@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido Concluído - SÓ BODY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <style>
+    .pix-section {
+      background: #f8f9fa;
+      border: 2px solid var(--primary-gold);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    .pix-section h3 {
+      color: var(--primary-gold);
+      margin-bottom: 20px;
+    }
+
+    #qrcode {
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      display: inline-block;
+    }
+
+    .pix-code-container {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 20px 0;
+      position: relative;
+    }
+
+    .pix-code {
+      font-family: monospace;
+      font-size: 0.9rem;
+      word-break: break-all;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .copy-btn {
+      background: var(--primary-gold);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: #b8941f;
+    }
+
+    .copy-btn.copied {
+      background: #28a745;
+    }
+
+    .pix-instructions {
+      text-align: left;
+      margin-top: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .pix-instructions ol {
+      padding-left: 20px;
+    }
+
+    .pix-instructions li {
+      margin: 10px 0;
+      color: #666;
+    }
+
+    .pix-timer {
+      color: #dc3545;
+      font-weight: 600;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+
+<body class="order-success">
+  <div class="success-page">
+    <div class="success-container">
+      <div class="success-animation">
+        <div class="check-circle">
+          <i class="fas fa-check"></i>
+        </div>
+      </div>
+
+      <h1 class="success-title">Pedido Realizado com Sucesso!</h1>
+      <p class="success-subtitle">Obrigada por comprar na SÓ BODY</p>
+
+      <div class="order-details">
+        <div class="order-number">
+          <span class="label">Número do Pedido</span>
+          <span class="value" id="order-number">#...</span>
+        </div>
+
+        <div class="order-info-grid">
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <span class="info-label">Email de Confirmação</span>
+              <span class="info-value">Enviado para seu email</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-calendar"></i>
+            <div>
+              <span class="info-label">Previsão de Entrega</span>
+              <span class="info-value">5-7 dias úteis</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-box"></i>
+            <div>
+              <span class="info-label">Status do Pedido</span>
+              <span class="info-value">Em Processamento</span>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <i class="fas fa-credit-card"></i>
+            <div>
+              <span class="info-label">Forma de Pagamento</span>
+              <span class="info-value" id="payment-method">...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIX Section (shown only if payment method is PIX) -->
+      <div id="pix-section" class="pix-section" style="display: none;">
+        <h3><i class="fas fa-qrcode"></i> Pague com PIX</h3>
+        <p>Escaneie o QR Code abaixo ou copie o código PIX</p>
+
+        <div id="qrcode"></div>
+
+        <div class="pix-code-container">
+          <div class="pix-code" id="pix-code-text"></div>
+          <button class="copy-btn" onclick="copyPixCode()">
+            <i class="fas fa-copy"></i> Copiar Código PIX
+          </button>
+        </div>
+
+        <div class="pix-timer">
+          <i class="fas fa-clock"></i> Código expira em: <span id="timer">30:00</span>
+        </div>
+
+        <div class="pix-instructions">
+          <strong>Como pagar:</strong>
+          <ol>
+            <li>Abra o app do seu banco</li>
+            <li>Escolha a opção PIX</li>
+            <li>Escaneie o QR Code ou cole o código copiado</li>
+            <li>Confirme o pagamento</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="order-summary-box">
+        <h3>Resumo da Compra</h3>
+        <div class="summary-items">
+          <div class="summary-row total">
+            <span>Total Pago</span>
+            <span id="order-total">R$ 0,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-actions">
+        <a href="my-orders.html" class="action-btn primary">
+          <i class="fas fa-list"></i>
+          Ver Meus Pedidos
+        </a>
+        <a href="catalog.html" class="action-btn secondary">
+          <i class="fas fa-shopping-bag"></i>
+          Continuar Comprando
+        </a>
+      </div>
+
+      <div class="next-steps">
+        <h4>Próximos Passos</h4>
+        <div class="steps-list">
+          <div class="step-item">
+            <div class="step-icon">1</div>
+            <div class="step-text">
+              <strong>Confirmação do Pagamento</strong>
+              <p>Aguarde a confirmação do pagamento</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-icon">2</div>
+            <div class="step-text">
+              <strong>Separação do Pedido</strong>
+              <p>Seu pedido será separado e embalado</p>
+            </div>
+          </div>
+          <div class="step-item">
+            <div class="step-icon">3</div>
+            <div class="step-text">
+              <strong>Envio</strong>
+              <p>Você receberá o código de rastreamento</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="support-message">
+        <i class="fas fa-headset"></i>
+        <div>
+          <strong>Precisa de ajuda?</strong>
+          <p>Entre em contato pelo WhatsApp: <a href="https://wa.me/5534996848050">(34) 99684-8050</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="global.js"></script>
+  <script>
+    // Get order info from localStorage
+    const orderId = localStorage.getItem('last_order_id');
+    const orderTotal = localStorage.getItem('last_order_total');
+    const paymentMethod = localStorage.getItem('last_payment_method');
+    const pixCode = localStorage.getItem('pix_code');
+
+    // Display order info
+    if (orderId) {
+      document.getElementById('order-number').textContent = `#${orderId.substring(0, 8).toUpperCase()}`;
+    }
+
+    if (orderTotal) {
+      document.getElementById('order-total').textContent = formatCurrency(parseFloat(orderTotal));
+    }
+
+    // Display payment method
+    const paymentMethodText = {
+      'credit': 'Cartão de Crédito',
+      'pix': 'PIX',
+      'boleto': 'Boleto Bancário'
+    };
+    document.getElementById('payment-method').textContent = paymentMethodText[paymentMethod] || 'Não especificado';
+
+    // Show PIX section if payment method is PIX
+    if (paymentMethod === 'pix' && pixCode) {
+      document.getElementById('pix-section').style.display = 'block';
+      document.getElementById('pix-code-text').textContent = pixCode;
+
+      // Generate QR Code
+      QRCode.toCanvas(document.getElementById('qrcode'), pixCode, {
+        width: 250,
+        margin: 2,
+        color: {
+          dark: '#000000',
+          light: '#FFFFFF'
+        }
+      });
+
+      // Start timer (30 minutes)
+      startTimer(30 * 60);
+    }
+
+    function copyPixCode() {
+      const pixCodeText = document.getElementById('pix-code-text').textContent;
+      navigator.clipboard.writeText(pixCodeText).then(() => {
+        const btn = document.querySelector('.copy-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check"></i> Código Copiado!';
+        btn.classList.add('copied');
+
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    function startTimer(duration) {
+      let timer = duration;
+      const timerDisplay = document.getElementById('timer');
+
+      const interval = setInterval(() => {
+        const minutes = parseInt(timer / 60, 10);
+        const seconds = parseInt(timer % 60, 10);
+
+        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+        if (--timer < 0) {
+          clearInterval(interval);
+          timerDisplay.textContent = 'EXPIRADO';
+          timerDisplay.style.color = '#dc3545';
+        }
+      }, 1000);
+    }
+
+    // Animate check icon on load
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.querySelector('.check-circle').classList.add('show');
+      }, 300);
+
+      // Clear localStorage after displaying
+      setTimeout(() => {
+        localStorage.removeItem('last_payment_method');
+      }, 1000);
+    });
+  </script>
+</body>
+
+</html>

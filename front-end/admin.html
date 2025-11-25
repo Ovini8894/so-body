@@ -76,11 +76,16 @@
     <!-- Header -->
     <header class="admin-header">
       <h1 class="admin-header-title" id="section-title">Dashboard</h1>
-      <div class="admin-user">
-        <div class="admin-user-avatar">A</div>
-        <div class="admin-user-info">
-          <div class="admin-user-name">Administrador</div>
-          <div class="admin-user-role">Gerente da loja</div>
+      <div class="admin-header-right">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Alternar tema">
+          <i class="fas fa-moon" id="theme-icon"></i>
+        </button>
+        <div class="admin-user">
+          <div class="admin-user-avatar">A</div>
+          <div class="admin-user-info">
+            <div class="admin-user-name">Administrador</div>
+            <div class="admin-user-role">Gerente da loja</div>
+          </div>
         </div>
       </div>
     </header>
@@ -131,13 +136,12 @@
       </section>
 
       <!-- Tabela de Pedidos Recentes -->
-      <section class="admin-content">
+      <section class="admin-content dashboard-recent-orders">
         <div class="admin-content-header">
           <h2 class="admin-content-title">Pedidos Recentes</h2>
-          <button class="admin-btn">
-            <i class="fas fa-plus"></i>
-            <span>Novo Pedido</span>
-          </button>
+          <a href="#" class="view-all-link" id="view-all-orders-link">
+            Ver todos <i class="fas fa-arrow-right"></i>
+          </a>
         </div>
         
         <table class="admin-table">
@@ -152,7 +156,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-status="paid">
               <td>#1234</td>
               <td>Maria Silva</td>
               <td>Body Preto - M</td>
@@ -160,16 +164,16 @@
               <td><span class="status-badge status-paid">Pago</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn edit">
+                  <button class="action-btn edit" data-order-id="#1234">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="action-btn delete">
+                  <button class="action-btn delete" data-order-id="#1234">
                     <i class="fas fa-trash"></i>
                   </button>
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr data-status="pending">
               <td>#1235</td>
               <td>Ana Costa</td>
               <td>Bolsa Caramelo</td>
@@ -177,16 +181,16 @@
               <td><span class="status-badge status-pending">Pendente</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn edit">
+                  <button class="action-btn edit" data-order-id="#1235">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="action-btn delete">
+                  <button class="action-btn delete" data-order-id="#1235">
                     <i class="fas fa-trash"></i>
                   </button>
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr data-status="shipped">
               <td>#1236</td>
               <td>Juliana Mendes</td>
               <td>Body Branco - P</td>
@@ -194,10 +198,10 @@
               <td><span class="status-badge status-shipped">Enviado</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn edit">
+                  <button class="action-btn edit" data-order-id="#1236">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="action-btn delete">
+                  <button class="action-btn delete" data-order-id="#1236">
                     <i class="fas fa-trash"></i>
                   </button>
                 </div>
@@ -230,8 +234,9 @@
                 <span class="product-item-stock">Em estoque: 25</span>
               </div>
               <div class="product-item-actions">
-                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                <button class="action-btn view" data-product-id="1"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit" data-product-id="1"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete" data-product-id="1"><i class="fas fa-trash"></i></button>
               </div>
             </div>
           </div>
@@ -246,8 +251,9 @@
                 <span class="product-item-stock">Em estoque: 15</span>
               </div>
               <div class="product-item-actions">
-                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                <button class="action-btn view" data-product-id="2"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit" data-product-id="2"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete" data-product-id="2"><i class="fas fa-trash"></i></button>
               </div>
             </div>
           </div>
@@ -262,8 +268,9 @@
                 <span class="product-item-stock">Em estoque: 30</span>
               </div>
               <div class="product-item-actions">
-                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                <button class="action-btn view" data-product-id="3"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit" data-product-id="3"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete" data-product-id="3"><i class="fas fa-trash"></i></button>
               </div>
             </div>
           </div>
@@ -278,8 +285,9 @@
                 <span class="product-item-stock">Em estoque: 12</span>
               </div>
               <div class="product-item-actions">
-                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                <button class="action-btn view" data-product-id="4"><i class="fas fa-eye"></i></button>
+                <button class="action-btn edit" data-product-id="4"><i class="fas fa-edit"></i></button>
+                <button class="action-btn delete" data-product-id="4"><i class="fas fa-trash"></i></button>
               </div>
             </div>
           </div>
@@ -292,11 +300,17 @@
       <section class="admin-content">
         <div class="admin-content-header">
           <h2 class="admin-content-title">Todos os Pedidos</h2>
-          <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="pending">Pendentes</button>
-            <button class="filter-btn" data-filter="paid">Pagos</button>
-            <button class="filter-btn" data-filter="shipped">Enviados</button>
+          <div class="pedidos-controls">
+            <div class="search-box">
+              <i class="fas fa-search"></i>
+              <input type="text" id="order-search" placeholder="Pesquisar por ID...">
+            </div>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">Todos</button>
+              <button class="filter-btn" data-filter="pending">Pendentes</button>
+              <button class="filter-btn" data-filter="paid">Pagos</button>
+              <button class="filter-btn" data-filter="shipped">Enviados</button>
+            </div>
           </div>
         </div>
         
@@ -313,7 +327,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr data-status="paid">
               <td>#1234</td>
               <td>Maria Silva</td>
               <td>Body Preto - M</td>
@@ -322,13 +336,13 @@
               <td><span class="status-badge status-paid">Pago</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-order-id="#1234"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-order-id="#1234"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-order-id="#1234"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr data-status="pending">
               <td>#1235</td>
               <td>Ana Costa</td>
               <td>Bolsa Caramelo</td>
@@ -337,13 +351,13 @@
               <td><span class="status-badge status-pending">Pendente</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-order-id="#1235"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-order-id="#1235"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-order-id="#1235"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr data-status="shipped">
               <td>#1236</td>
               <td>Juliana Mendes</td>
               <td>Body Branco - P</td>
@@ -352,13 +366,13 @@
               <td><span class="status-badge status-shipped">Enviado</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-order-id="#1236"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-order-id="#1236"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-order-id="#1236"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
-            <tr>
+            <tr data-status="paid">
               <td>#1237</td>
               <td>Carla Souza</td>
               <td>Vestido Floral - M</td>
@@ -367,9 +381,9 @@
               <td><span class="status-badge status-paid">Pago</span></td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-order-id="#1237"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-order-id="#1237"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-order-id="#1237"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
@@ -383,7 +397,7 @@
       <section class="admin-content">
         <div class="admin-content-header">
           <h2 class="admin-content-title">Gerenciar Clientes</h2>
-          <button class="admin-btn">
+          <button class="admin-btn" id="add-client-btn">
             <i class="fas fa-plus"></i>
             <span>Adicionar Cliente</span>
           </button>
@@ -411,9 +425,9 @@
               <td>10/01/2025</td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-client-id="#001"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-client-id="#001"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-client-id="#001"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
@@ -426,9 +440,9 @@
               <td>12/01/2025</td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-client-id="#002"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-client-id="#002"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-client-id="#002"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
@@ -441,9 +455,9 @@
               <td>15/01/2025</td>
               <td>
                 <div class="action-buttons">
-                  <button class="action-btn view"><i class="fas fa-eye"></i></button>
-                  <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-                  <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                  <button class="action-btn view" data-client-id="#003"><i class="fas fa-eye"></i></button>
+                  <button class="action-btn edit" data-client-id="#003"><i class="fas fa-edit"></i></button>
+                  <button class="action-btn delete" data-client-id="#003"><i class="fas fa-trash"></i></button>
                 </div>
               </td>
             </tr>
@@ -473,8 +487,8 @@
               <p class="category-count">35 produtos</p>
             </div>
             <div class="category-actions">
-              <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-              <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              <button class="action-btn edit" data-category-id="bodies"><i class="fas fa-edit"></i></button>
+              <button class="action-btn delete" data-category-id="bodies"><i class="fas fa-trash"></i></button>
             </div>
           </div>
           
@@ -487,8 +501,8 @@
               <p class="category-count">22 produtos</p>
             </div>
             <div class="category-actions">
-              <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-              <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              <button class="action-btn edit" data-category-id="bolsas"><i class="fas fa-edit"></i></button>
+              <button class="action-btn delete" data-category-id="bolsas"><i class="fas fa-trash"></i></button>
             </div>
           </div>
           
@@ -501,8 +515,8 @@
               <p class="category-count">18 produtos</p>
             </div>
             <div class="category-actions">
-              <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-              <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              <button class="action-btn edit" data-category-id="vestidos"><i class="fas fa-edit"></i></button>
+              <button class="action-btn delete" data-category-id="vestidos"><i class="fas fa-trash"></i></button>
             </div>
           </div>
           
@@ -515,8 +529,8 @@
               <p class="category-count">14 produtos</p>
             </div>
             <div class="category-actions">
-              <button class="action-btn edit"><i class="fas fa-edit"></i></button>
-              <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+              <button class="action-btn edit" data-category-id="acessorios"><i class="fas fa-edit"></i></button>
+              <button class="action-btn delete" data-category-id="acessorios"><i class="fas fa-trash"></i></button>
             </div>
           </div>
         </div>
@@ -616,23 +630,6 @@
           </div>
         </div>
         
-        <div class="export-section">
-          <h3>Exportar Relatórios</h3>
-          <div class="export-buttons">
-            <button class="export-btn">
-              <i class="fas fa-file-pdf"></i>
-              <span>Exportar PDF</span>
-            </button>
-            <button class="export-btn">
-              <i class="fas fa-file-excel"></i>
-              <span>Exportar Excel</span>
-            </button>
-            <button class="export-btn">
-              <i class="fas fa-file-csv"></i>
-              <span>Exportar CSV</span>
-            </button>
-          </div>
-        </div>
       </section>
     </div>
 
@@ -791,7 +788,7 @@ Uberlândia - MG, 38400-000</textarea>
         <div class="form-row">
           <div class="form-group">
             <label for="product-price">Preço</label>
-            <input type="text" id="product-price" placeholder="R$ 0,00" required>
+            <input type="text" id="product-price" placeholder="R$ 0,00" maxlength="15" required>
           </div>
           <div class="form-group">
             <label for="product-stock">Estoque</label>
@@ -870,6 +867,270 @@ Uberlândia - MG, 38400-000</textarea>
           </button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- Modal de Confirmação de Exclusão -->
+  <div id="delete-confirm-modal" class="modal">
+    <div class="modal-content modal-small">
+      <div class="modal-header">
+        <h2>Confirmar Exclusão</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p id="delete-confirm-message">Tem certeza que deseja excluir este item? Esta ação não pode ser desfeita.</p>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn-cancel">Cancelar</button>
+        <button type="button" class="modal-btn-delete" id="confirm-delete-btn">
+          <i class="fas fa-trash"></i>
+          Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Editar Pedido -->
+  <div id="edit-order-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Editar Pedido</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form class="modal-form" id="edit-order-form">
+        <div class="form-group">
+          <label for="edit-order-id">ID do Pedido</label>
+          <input type="text" id="edit-order-id" readonly>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-order-client">Cliente</label>
+            <input type="text" id="edit-order-client" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-order-product">Produto</label>
+            <input type="text" id="edit-order-product" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-order-value">Valor</label>
+            <input type="text" id="edit-order-value" placeholder="R$ 0,00" maxlength="15" required>
+          </div>
+          <div class="form-group">
+            <label for="edit-order-status">Status</label>
+            <select id="edit-order-status" required>
+              <option value="pending">Pendente</option>
+              <option value="paid">Pago</option>
+              <option value="shipped">Enviado</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="modal-btn-cancel">Cancelar</button>
+          <button type="submit" class="modal-btn-save">
+            <i class="fas fa-save"></i>
+            Salvar Alterações
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Inspecionar Pedido -->
+  <div id="view-order-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Detalhes do Pedido</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="order-details">
+          <div class="detail-row">
+            <span class="detail-label">ID:</span>
+            <span class="detail-value" id="view-order-id">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Cliente:</span>
+            <span class="detail-value" id="view-order-client">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Produto:</span>
+            <span class="detail-value" id="view-order-product">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Valor:</span>
+            <span class="detail-value" id="view-order-value">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Data:</span>
+            <span class="detail-value" id="view-order-date">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Status:</span>
+            <span class="detail-value" id="view-order-status">-</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn-cancel">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Cadastrar Cliente -->
+  <div id="client-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="client-modal-title">Adicionar Cliente</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form class="modal-form" id="client-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="client-name">Nome</label>
+            <input type="text" id="client-name" required>
+          </div>
+          <div class="form-group">
+            <label for="client-email">Email</label>
+            <input type="email" id="client-email" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="client-phone">Telefone</label>
+            <input type="tel" id="client-phone" placeholder="(00) 00000-0000" maxlength="15" required>
+          </div>
+          <div class="form-group">
+            <label for="client-cpf">CPF</label>
+            <input type="text" id="client-cpf" placeholder="000.000.000-00" maxlength="14" required>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="modal-btn-cancel">Cancelar</button>
+          <button type="submit" class="modal-btn-save">
+            <i class="fas fa-save"></i>
+            Salvar Cliente
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Inspecionar Cliente -->
+  <div id="view-client-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Detalhes do Cliente</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="order-details">
+          <div class="detail-row">
+            <span class="detail-label">ID:</span>
+            <span class="detail-value" id="view-client-id">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Nome:</span>
+            <span class="detail-value" id="view-client-name">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Email:</span>
+            <span class="detail-value" id="view-client-email">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Telefone:</span>
+            <span class="detail-value" id="view-client-phone">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">CPF:</span>
+            <span class="detail-value" id="view-client-cpf">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Total de Compras:</span>
+            <span class="detail-value" id="view-client-total">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Data de Cadastro:</span>
+            <span class="detail-value" id="view-client-date">-</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn-cancel">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de Editar Categoria -->
+  <div id="edit-category-modal" class="modal">
+    <div class="modal-content modal-small">
+      <div class="modal-header">
+        <h2>Editar Categoria</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form class="modal-form" id="edit-category-form">
+        <div class="form-group">
+          <label for="edit-category-name">Nome da Categoria</label>
+          <input type="text" id="edit-category-name" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-category-icon">Ícone</label>
+          <select id="edit-category-icon" required>
+            <option value="">Selecione um ícone...</option>
+            <option value="fa-tshirt">Roupas</option>
+            <option value="fa-shopping-bag">Bolsas</option>
+            <option value="fa-female">Vestidos</option>
+            <option value="fa-gem">Acessórios</option>
+            <option value="fa-shoe-prints">Calçados</option>
+            <option value="fa-glasses">Óculos</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="edit-category-color">Cor</label>
+          <input type="color" id="edit-category-color" value="#D4AF37">
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="modal-btn-cancel">Cancelar</button>
+          <button type="submit" class="modal-btn-save">
+            <i class="fas fa-save"></i>
+            Salvar Alterações
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de Inspecionar Produto -->
+  <div id="view-product-modal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Detalhes do Produto</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="order-details">
+          <div class="detail-row">
+            <span class="detail-label">Nome:</span>
+            <span class="detail-value" id="view-product-name">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Categoria:</span>
+            <span class="detail-value" id="view-product-category">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Preço:</span>
+            <span class="detail-value" id="view-product-price">-</span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Estoque:</span>
+            <span class="detail-value" id="view-product-stock">-</span>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn-cancel">Fechar</button>
+      </div>
     </div>
   </div>
 

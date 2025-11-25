@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meus Pedidos - SÓ BODY</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .orders-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 0 20px;
+        }
+
+        .orders-header {
+            margin-bottom: 30px;
+        }
+
+        .orders-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-gold);
+            margin-bottom: 10px;
+        }
+
+        .order-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: box-shadow 0.3s;
+        }
+
+        .order-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .order-id {
+            font-weight: 700;
+            color: #333;
+        }
+
+        .order-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .order-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-PENDING {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-PAID {
+            background: #d1ecf1;
+            color: #0c5460;
+        }
+
+        .status-SHIPPED {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-DELIVERED {
+            background: #28a745;
+            color: white;
+        }
+
+        .status-CANCELLED {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .order-items {
+            margin: 15px 0;
+        }
+
+        .order-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .order-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-image {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .item-quantity {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--primary-gold);
+        }
+
+        .order-total {
+            text-align: right;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .total-label {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .total-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-left: 10px;
+        }
+
+        .empty-orders {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .empty-orders i {
+            font-size: 4rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .empty-orders h2 {
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .empty-orders p {
+            color: #999;
+            margin-bottom: 20px;
+        }
+
+        .btn-shop {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+
+        .btn-shop:hover {
+            background: #b8941f;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <span class="brand-logo">
+                <img src="images/whitesobody-removebg-preview.png" alt="Logo SÓ BODY">
+            </span>
+        </div>
+
+        <div class="navbar-menu">
+            <a href="index.html" class="navbar-item">INÍCIO</a>
+            <a href="catalog.html" class="navbar-item">PRODUTOS</a>
+            <a href="my-orders.html" class="navbar-item active">MEUS PEDIDOS</a>
+            <a href="#" class="navbar-item" onclick="API.auth.logout()">SAIR</a>
+        </div>
+
+        <div class="navbar-icons">
+            <a href="cart.html" class="navbar-icon" aria-label="Carrinho">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <span class="cart-badge">0</span>
+            </a>
+        </div>
+
+        <button class="navbar-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Orders Container -->
+    <div class="orders-container">
+        <div class="orders-header">
+            <h1>Meus Pedidos</h1>
+            <p>Acompanhe o status dos seus pedidos</p>
+        </div>
+
+        <div id="orders-list">
+            <!-- Orders will be loaded here -->
+        </div>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="global.js"></script>
+    <script>
+        // Check if user is logged in
+        if (!API.auth.isAuthenticated()) {
+            window.location.href = 'login.html';
+        }
+
+        async function loadOrders() {
+            const ordersList = document.getElementById('orders-list');
+
+            try {
+                const orders = await API.orders.getUserOrders();
+
+                if (orders.length === 0) {
+                    ordersList.innerHTML = `
+            <div class="empty-orders">
+              <i class="fas fa-shopping-bag"></i>
+              <h2>Você ainda não fez nenhum pedido</h2>
+              <p>Explore nosso catálogo e faça sua primeira compra!</p>
+              <a href="catalog.html" class="btn-shop">Ver Produtos</a>
+            </div>
+          `;
+                    return;
+                }
+
+                ordersList.innerHTML = orders.map(order => `
+          <div class="order-card">
+            <div class="order-header">
+              <div>
+                <div class="order-id">Pedido #${order.id.substring(0, 8)}</div>
+                <div class="order-date">${new Date(order.createdAt).toLocaleDateString('pt-BR')}</div>
+              </div>
+              <span class="order-status status-${order.status}">${getStatusText(order.status)}</span>
+            </div>
+            
+            <div class="order-items">
+              ${order.items.map(item => `
+                <div class="order-item">
+                  <img src="${item.product.image}" alt="${item.product.name}" class="item-image">
+                  <div class="item-details">
+                    <div class="item-name">${item.product.name}</div>
+                    <div class="item-quantity">Quantidade: ${item.quantity}</div>
+                  </div>
+                  <div class="item-price">${formatCurrency(parseFloat(item.price))}</div>
+                </div>
+              `).join('')}
+            </div>
+            
+            <div class="order-total">
+              <span class="total-label">Total:</span>
+              <span class="total-value">${formatCurrency(parseFloat(order.total))}</span>
+            </div>
+          </div>
+        `).join('');
+            } catch (error) {
+                console.error('Erro ao carregar pedidos:', error);
+                ordersList.innerHTML = `
+          <div class="empty-orders">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h2>Erro ao carregar pedidos</h2>
+            <p>${error.message}</p>
+          </div>
+        `;
+            }
+        }
+
+        function getStatusText(status) {
+            const statusMap = {
+                'PENDING': 'Pendente',
+                'PAID': 'Pago',
+                'SHIPPED': 'Enviado',
+                'DELIVERED': 'Entregue',
+                'CANCELLED': 'Cancelado'
+            };
+            return statusMap[status] || status;
+        }
+
+        // Load orders on page load
+        loadOrders();
+    </script>
+</body>
+
+</html>

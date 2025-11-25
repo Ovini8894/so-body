@@ -195,14 +195,41 @@ document.addEventListener('DOMContentLoaded', () => {
   // Update cart badge on all pages
   CartManager.updateBadge();
   
-  // Mobile menu toggle
+  // Mobile menu toggle with body scroll lock
   const navbarToggle = document.querySelector('.navbar-toggle');
   const navbarMenu = document.querySelector('.navbar-menu');
+  const body = document.body;
   
   if (navbarToggle && navbarMenu) {
     navbarToggle.addEventListener('click', () => {
-      navbarToggle.classList.toggle('active');
+      const isActive = navbarToggle.classList.toggle('active');
       navbarMenu.classList.toggle('active');
+      
+      // Prevent body scroll when menu is open
+      if (isActive) {
+        body.style.overflow = 'hidden';
+      } else {
+        body.style.overflow = '';
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navbarToggle.contains(e.target) && !navbarMenu.contains(e.target)) {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+        body.style.overflow = '';
+      }
+    });
+    
+    // Close menu when clicking on a menu item
+    const navbarItems = navbarMenu.querySelectorAll('.navbar-item');
+    navbarItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navbarToggle.classList.remove('active');
+        navbarMenu.classList.remove('active');
+        body.style.overflow = '';
+      });
     });
   }
 });
